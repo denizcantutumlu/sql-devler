@@ -1,0 +1,35 @@
+select first_name from customer
+union all 
+select first_name from actor
+
+select first_name from customer
+intersect
+select first_name from actor
+
+select first_name from actor
+except
+select first_name from customer
+
+select first_name from actor
+group by first_name 
+having count(first_name)>1
+union all
+select first_name from customer
+group by first_name 
+having count(first_name)>1
+
+select first_name from actor 
+group by first_name 
+having count(first_name)>1
+intersect 
+select first_name from customer 
+group by first_name 
+having count(first_name)>1
+
+select first_name from actor
+group by first_name 
+having count(first_name)>1
+except
+select first_name from customer
+group by first_name 
+having count(first_name)>1
